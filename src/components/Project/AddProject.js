@@ -110,21 +110,35 @@ class AddProject extends Component {
                   <div className="form-group">
                     <input
                       type="date"
-                      className="form-control form-control-lg"
+                      className={classnames("form-control form-control-lg", {
+                        "is-invalid": errors.description
+                      })}
                       name="start_date"
                       value={this.state.start_date}
                       onChange={this.onChange}
                     />
+                    {errors.description && (
+                        <div className="invalid-feedback">
+                          {errors.start_date}
+                        </div>
+                    )}
                   </div>
                   <h6>Estimated End Date</h6>
                   <div className="form-group">
                     <input
                       type="date"
-                      className="form-control form-control-lg"
+                      className={classnames("form-control form-control-lg", {
+                        "is-invalid": errors.description
+                      })}
                       name="end_date"
                       value={this.state.end_date}
                       onChange={this.onChange}
                     />
+                    {errors.description && (
+                        <div className="invalid-feedback">
+                          {errors.end_date}
+                        </div>
+                    )}
                   </div>
 
                   <input
